@@ -1,0 +1,25 @@
+body{
+    
+    background-size: cover;
+}
+h1 {
+    font-style: oblique;
+    font-size: 100px;
+    align-self: center;
+    
+    
+}
+ol {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    color: aqua;
+    scroll-margin-right: TRUE;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+
+    
+}
+.abc{
+    color: white;
+    font-size: 40px; 
+}
