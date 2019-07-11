@@ -9,6 +9,6 @@ class ReviewForm(FlaskForm):
                            validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
-    your_idea=TextAreaField('Share your idea', validators=[DataRequired()])
+    your_idea=TextAreaField('Share your review', validators=[DataRequired()])
     submit = SubmitField('Submit')
     #forms
