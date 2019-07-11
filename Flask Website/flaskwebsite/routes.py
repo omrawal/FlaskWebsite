@@ -21,7 +21,7 @@ def faqpage():
 def reviewpage():
     form=ReviewForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data)
+        user = Post(name=form.name.data, email=form.email.data)
         db.session.add(user)
         db.session.commit()
         flash('Thank you for sharing your reviews', 'success')
