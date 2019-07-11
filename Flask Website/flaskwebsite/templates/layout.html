@@ -6,27 +6,27 @@
     <header>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
-                <a class="navbar-brand" href="/">ZOMBEPEDIA</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
+            <a class="navbar-brand" href="/">ZombieArena</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>    
-                            
-                            
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="/">HOME<span class="sr-only">(current)</span></a>
-                            <a class="nav-item nav-link active" href="/movie1">MOVIES</a>
-                            <a class="nav-item nav-link active" href="/books">BOOKS</a>
-                            <a class="nav-item nav-link active" href="/reviews">REVIEWS</a>
-                            <a class="nav-item nav-link active" href="/faq">FAQ's</a>  
-                            <a class="nav-item nav-link active" href="/posts">POSTS</a>    
-                    </div>
-                   
+                </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="/">HOME<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="/movie1">MOVIES</a>
+                    <a class="nav-item nav-link active" href="/books">BOOKS</a>
+                    <a class="nav-item nav-link active" href="/reviews">REVIEWS</a>
+                    <a class="nav-item nav-link active" href="/posts">POSTS</a>
                 </div>
-            </nav>            
-        </header>
-     <title>
+
+            </div>
+        </nav>
+    </header>
+
+    <title>
         {% block title %} {% endblock title %}
     </title>
 </header>
@@ -34,16 +34,11 @@
 <body>
     <div class="row">
         <div class="col-md-8">
-          {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
-          {% block content %}{% endblock %}
+            {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
         </div>
     </div>
     <!--MAKE CHANGES HERE-->
@@ -51,5 +46,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+<hr>
+<!-- Footer -->
+<footer class="page-footer font-small teal pt-4" style="background-color:rgb(64, 73, 90); color:ivory">
+
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left" style="color:ivory">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3" style="color:ivory">
+
+                <!-- Content -->
+                <h5 class="text-uppercase font-weight-bold" style="color:ivory">Credits-</h5>
+                <p>
+                    Get our Source Code here --><a href="https://github.com/omrawal/FlaskWebsite" target="_blank">Source Code</a><br> Contact Contributers:
+                    <br><a href="mailto:pranav.ahuja@somaiya.edu">Pranav Ahuja.</a><br><a href="mailto:om.rawal@somaiya.edu">OM Rawal.</a><br><a href="mailto:tejas.khanolkar@somaiya.edu">Tejas Khanolkar.</a><br><a href="mailto:saurav.yj@somaiya.edu">Saurav Joshi.</a><br>
+                    <a href="mailto:vedatma.k@somaiya.edu">Vedatma.K</a>
+                </p>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none pb-3" style="color:ivory">
+
+            <!-- Grid column -->
+            <div class="col-md-6 mb-md-0 mb-3" style="color:ivory">
+
+                <!-- Content -->
+                <h5 class="text-uppercase font-weight-bold" style="color:ivory">Links:</h5>
+                <p>
+                    <a class="nav-item nav-link" href="faq">FAQ's</a>
+                </p>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!-- Footer Text -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="/">ZombieArena.com </a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 </html>
