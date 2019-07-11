@@ -14,7 +14,7 @@ def moviepage():
 @app.route('/faq')
 def faqpage():
     return render_template("faq.html")
-@app.route('/reviews')
+@app.route('/reviews', methods=['GET', 'POST'])
 def reviewpage():
     form=ReviewForm()
     if form.validate_on_submit():
