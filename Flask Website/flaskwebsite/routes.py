@@ -27,4 +27,7 @@ def reviewpage():
         flash('Thank you for sharing your reviews', 'success')
         return redirect(url_for('reviewpage'))
     return render_template("reviews.html",form=form)
-
+@app.route('/posts')
+def posts():
+    posts=Post.query.all()
+    return render_template("post.html",posts=posts)

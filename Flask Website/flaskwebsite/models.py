@@ -10,3 +10,4 @@ class Post(db.Model):
     def __repr__(self):
         return f"Post('{self.name}', '{self.date_posted}')"
 #models
+db.create_all()
