@@ -21,8 +21,8 @@ def faqpage():
 def reviewpage():
     form=ReviewForm()
     if form.validate_on_submit():
-        user = Post(name=form.name.data, email=form.email.data)
-        db.session.add(user)
+        post = Post(name=form.name.data, email=form.email.data, your_idea=form.your_idea.data)
+        db.session.add(post)
         db.session.commit()
         flash('Thank you for sharing your reviews', 'success')
         return redirect(url_for('reviewpage'))

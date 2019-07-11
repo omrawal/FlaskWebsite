@@ -1,10 +1,11 @@
 from datetime import datetime
 from flaskwebsite import db
 class Post(db.Model):
-    name = db.Column(db.String(100), primary_key=True)
+    id=db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50),nullable=False)
     email = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    content = db.Column(db.Text, nullable=False)
+    your_idea = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
         return f"Post('{self.name}', '{self.date_posted}')"
