@@ -8,9 +8,12 @@ def homepage():
 @app.route('/books')
 def bookpage():
     return render_template("books.html")
-@app.route('/movies')
-def moviepage():
-    return render_template("movies.html")
+@app.route('/movie1')
+def moviepage1():
+    return render_template("movie1.html")
+@app.route('/movie2')
+def moviepage2():
+    return render_template("movie2.html")
 @app.route('/faq')
 def faqpage():
     return render_template("faq.html")
@@ -21,7 +24,7 @@ def reviewpage():
         user = User(username=form.username.data, email=form.email.data)
         db.session.add(user)
         db.session.commit()
-        flash('Your account has been created! You are now able to log in', 'success')
+        flash('Thank you for sharing your reviews', 'success')
         return redirect(url_for('reviewpage'))
     return render_template("reviews.html",form=form)
 
